@@ -1,8 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class Computer : Paddle
+public class ComputerPaddle : Paddle
 {
-    [SerializeField] private Rigidbody2D ball;
+    public Rigidbody2D ball;
+    private void FixedUpdate()
+    {
+        
+    }
 }
