@@ -4,5 +4,5 @@ using UnityEngine;
 
 public class Computer : Paddle
 {
-    
+    [SerializeField] private Rigidbody2D ball;
 }

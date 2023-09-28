@@ -10,10 +10,10 @@ public class Player : Paddle
     private void Update()
     {
         // 위로 이동
-        if (Input.GetKey(KeyCode.W))
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
             direction = Vector2.up;
         // 아래로 이동
-        else if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
             direction = Vector2.down;
         else
             direction = Vector2.zero;
