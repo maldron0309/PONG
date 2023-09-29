@@ -15,13 +15,20 @@ public class Ball : MonoBehaviour
 
     private void Start()
     {
+        ResetBall();
         AddStartingForce();
+    }
+    
+    public void ResetBall()
+    {
+        rb.position = Vector3.zero;
+        rb.velocity = Vector3.zero;
     }
 
     /// <summary>
     /// 공에 초기 속도를 부여하는 함수
     /// </summary>
-    private void AddStartingForce()
+    public void AddStartingForce()
     {
         // x 방향의 초기 속도를 무작위로 설정
         float x = Random.value < 0.5f ? -1.0f : 1.0f;
@@ -32,4 +39,11 @@ public class Ball : MonoBehaviour
         Vector2 dir = new Vector2(x, y);
         rb.AddForce(dir * this.speed);
     }
+
+    public void AddForce(Vector2 force)
+    {
+        rb.AddForce(force);
+    }
+    
+    
 }
