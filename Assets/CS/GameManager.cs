@@ -14,6 +14,9 @@ public class GameManager : MonoBehaviour
    public TextMeshProUGUI playerScoreText;
    public TextMeshProUGUI computerScoreText;
    
+   public GameObject winText;
+   public GameObject loseText;
+   
    
    // 플레이어 점수
    private int playerScore;
@@ -22,8 +25,14 @@ public class GameManager : MonoBehaviour
 
    public void PlayerScores()
    {
+      
       playerScore++;
       this.playerScoreText.text = playerScore.ToString();
+
+      if (playerScore >= 15)
+      {
+         winText.SetActive(true);
+      }
       
       ResetRound();
       
@@ -33,6 +42,11 @@ public class GameManager : MonoBehaviour
    {
       computerScore++;
       this.computerScoreText.text = computerScore.ToString();
+      
+      if (computerScore >= 15)
+      {
+         loseText.SetActive(true);
+      }
       
       ResetRound();
       
