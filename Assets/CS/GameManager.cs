@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,8 +15,8 @@ public class GameManager : MonoBehaviour
    public TextMeshProUGUI playerScoreText;
    public TextMeshProUGUI computerScoreText;
    
-   public GameObject winText;
-   public GameObject loseText;
+   // public GameObject winText;
+   // public GameObject loseText;
    
    
    // 플레이어 점수
@@ -31,7 +32,9 @@ public class GameManager : MonoBehaviour
 
       if (playerScore >= 15)
       {
-         winText.SetActive(true);
+         // winText.SetActive(true);
+         
+         SceneManager.LoadScene("Win");
       }
       
       ResetRound();
@@ -43,9 +46,11 @@ public class GameManager : MonoBehaviour
       computerScore++;
       this.computerScoreText.text = computerScore.ToString();
       
-      if (computerScore >= 15)
+      if (computerScore >= 2)
       {
-         loseText.SetActive(true);
+         // loseText.SetActive(true);
+
+         SceneManager.LoadScene("Lose");
       }
       
       ResetRound();
@@ -59,4 +64,5 @@ public class GameManager : MonoBehaviour
       this.ball.AddStartingForce();
       this.ball.ResetBall();
    }
+   
 }
