@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void OnClickPlayGame()
     {
-        // 메인 메뉴 씬으로 이동
+        // 게임 시작
         SceneManager.LoadScene("InGame");
     }
 

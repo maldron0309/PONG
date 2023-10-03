@@ -46,7 +46,7 @@ public class GameManager : MonoBehaviour
       computerScore++;
       this.computerScoreText.text = computerScore.ToString();
       
-      if (computerScore >= 2)
+      if (computerScore >= 15)
       {
          // loseText.SetActive(true);
 
